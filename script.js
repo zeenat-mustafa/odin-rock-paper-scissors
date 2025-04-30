@@ -15,7 +15,7 @@ let computerScore = 0;
 
 let rndRslt = document.getElementById("roundResult");
 let score = document.getElementById("score");
-let winer = document.getElementById("winner");
+let winner = document.getElementById("winner");
 
 // let roundResult = rndRslt.innerText;
 // let score = scr.innerText;
@@ -23,7 +23,7 @@ let winer = document.getElementById("winner");
 
 // let roundResult = '';
 // let score = '';
-let winner = '';
+// let winner = '';
 
 
 
@@ -45,6 +45,18 @@ function playRound(humanChoice) {
 
     rndRslt.innerText = roundResult;
     score.innerText = `Your Score: ${humanScore} - Computer Score: ${computerScore}`;
+    
+    if(humanScore >= 5 || computerScore >= 5){
+
+        if(humanScore >= 5) {
+            winner.innerText = "Congrats! You are the Winner.";
+        } else {
+            winner.innerText = "Opps! The Computer Wins.";
+        }
+
+        humanScore = 0;
+        computerScore = 0;
+    }
 
 }
 
