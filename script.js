@@ -13,20 +13,39 @@ function getComputerChoice() {
 let humanScore = 0;
 let computerScore = 0;
 
+let rndRslt = document.getElementById("roundResult");
+let score = document.getElementById("score");
+let winer = document.getElementById("winner");
+
+// let roundResult = rndRslt.innerText;
+// let score = scr.innerText;
+// let winner = winer.innerText;
+
+// let roundResult = '';
+// let score = '';
+let winner = '';
+
+
+
 function playRound(humanChoice) {
     let computerChoice = getComputerChoice();
+    let roundResult = '';
 
     if (humanChoice === computerChoice) {
-        console.log("Its a tie!");
+        roundResult = "Its a tie!";
     } else if (
         humanChoice === "rock" && computerChoice === "scissors" || humanChoice === "scissors" && computerChoice === "paper" || humanChoice === "paper" && computerChoice === "rock"
     ) {
-        console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+        roundResult = `You win! ${humanChoice} beats ${computerChoice}`;
         humanScore++;
     } else {
-        console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+        roundResult = `You lose! ${computerChoice} beats ${humanChoice}`;
         computerScore++;
     }
+
+    rndRslt.innerText = roundResult;
+    score.innerText = `Your Score: ${humanScore} - Computer Score: ${computerScore}`;
+
 }
 
 document.getElementById("rock").addEventListener("click", () => playRound("rock"));
