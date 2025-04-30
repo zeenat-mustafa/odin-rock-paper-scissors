@@ -17,16 +17,6 @@ let rndRslt = document.getElementById("roundResult");
 let score = document.getElementById("score");
 let winner = document.getElementById("winner");
 
-// let roundResult = rndRslt.innerText;
-// let score = scr.innerText;
-// let winner = winer.innerText;
-
-// let roundResult = '';
-// let score = '';
-// let winner = '';
-
-
-
 function playRound(humanChoice) {
     let computerChoice = getComputerChoice();
     let roundResult = '';
@@ -63,25 +53,3 @@ function playRound(humanChoice) {
 document.getElementById("rock").addEventListener("click", () => playRound("rock"));
 document.getElementById("paper").addEventListener("click", () => playRound("paper"));
 document.getElementById("scissors").addEventListener("click", () => playRound("scissors"));
-
-// function playGame() {
-
-//     for (let i = 1; i <= 5; i++) {
-//         const humanChoice = getHumanChoice();
-//         const computerChoice = getComputerChoice();
-
-//         playRound(humanChoice, computerChoice);
-
-//         console.log(`Your Score: ${humanScore}, Computer's Score: ${computerScore} `);
-//     }
-
-//     if (humanScore > computerScore) {
-//         console.log("Congrats! You are the Winner.");
-//     } else if (humanScore < computerScore) {
-//         console.log("Opps! The Computer Wins.");
-//     } else {
-//         console.log("It's a Tie! Try again.");
-//     }
-// }
-
-// playGame();
